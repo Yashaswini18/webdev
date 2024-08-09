@@ -9,3 +9,6 @@
 # Python - list.append(item)
 # JS - list.push(item)
 
+#to check length
+# P - lengthoflist = len(list)
+# JS - list.length()

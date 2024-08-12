@@ -1,1 +1,1 @@
-alert("Hello there!")
+document.query

@@ -1,0 +1,35 @@
+document;
+document.firstElementChild
+document.firstElementChild.firstElementChild //<head>​…​</head>​
+document.firstElementChild.lastElementChild
+var heading = document.firstElementChild.lastElementChild.firstElementChild
+heading.innerHTML = "GoodBye"
+heading.style.color = "Yellow"
+document.querySelector("input").click(); //checks the checkbox
+document.lastElementChild.lastElementChild.lastElementChild.lastElementChild.innerHTML = "Changed"
+document.getElementsByTagName("li")[2].innerHTML = "Yashaswini" //a better way to change the 3rd li
+document.getElementsByTagName("li").length; //as its a list
+document.getElementsByClassName("btn");
+document.getElementById("title")
+document.getElementById("title").innerHTML = "New website"
+Can you querySelector for all types like ID, class etc 
+document.querySelector("h1")
+document.querySelector("#title")
+document.querySelector(".btn")
+document.querySelector("li a"); //hirerarchy method - anchor tag under li element
+document.querySelector("li.item") //list that also has a class - outputs only the first object that matches the quey to get all maches user querySelectorAll
+document.querySelectorAll("li.item")
+document.querySelector("li a").style.color = "Orange"
+document.querySelector("li a").style.fontSize = "10rem" //manipulating with JS
+document.querySelector(".btn").style.backgroundColor = "Yellow";
+Seperation of code - Keeping styling in CSS, HTML for content, JS for behaviour
+document.querySelector("button").classList; //lists all the class of an element
+document.querySelector("button").classList.add("invisible");
+document.querySelector("button").classList.remove("invisible");
+document.querySelector("button").classList.toggle("invisible");
+document.querySelector("h1").classList.add("huge");
+document.querySelector("h1").textContent; //see differnce between innerHTML and textContent
+document.querySelector("h1").innerHTML = "<em> Bye </em>";
+document.querySelector("a").attributes;
+document.querySelector("a").getAttribute("href")
+document.querySelector("a").setAttribute("href", "https://www.bing.com");

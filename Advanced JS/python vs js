@@ -12,3 +12,7 @@
 #to check length
 # P - lengthoflist = len(list)
 # JS - list.length()
+
+#Convert String to Int
+var inp = int(input("Enter your age:))
+var age = Number()

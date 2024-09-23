@@ -1,0 +1,77 @@
+CREATE:
+CREATE TABLE customers (
+    id INT NOT NULL,
+    first_name STRING,
+    last_name STRING,
+   	address STRING,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO customers
+VALUES (1,'John', 'Doe', 'Bengaluru')
+
+INSERT INTO customers
+VALUES (2,'Angela', 'Yu', 'Tumkur')
+
+
+CREATE TABLE products (
+    id INT NOT NULL,
+    name STRING,
+    price MONEY,
+  PRIMARY KEY (id)
+);
+
+
+INSERT INTO products
+VALUES (1,'Pen', 10)
+
+INSERT INTO products (id, name)
+VALUES (2,'Pencil')
+
+READ:
+SELECT * FROM products
+
+SELECT name,price FROM products
+
+SELECT * FROM products WHERE id=1
+
+
+UPDATE:
+UPDATE products
+SET price=0.8
+WHERE id=1
+
+adding columns to existing table:
+ALTER TABLE products
+add stock INT
+
+DELETE:
+DELETE FROM products
+WHERE name='Pencil'
+
+DELETE FROM products
+WHERE id=1
+
+
+
+JOIN:
+CREATE TABLE orders (
+    id INT NOT NULL,
+    order_number INT,
+    customer_id INT,
+    product_id INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (customer_id) REFERENCES customers(id),
+    FOREIGN KEY (product_id) REFERENCES products(id)
+)
+
+INSERT INTO orders
+VALUES (1, 4362, 2, 1)
+
+SELECT orders.order_number, customers.first_name, customers.last_name, customers.address
+FROM orders
+INNER JOIN customers ON orders.customer_id = customers.id
+
+SELECT orders.order_number, products.name, products.price, products.stock
+FROM orders
+INNER JOIN products ON orders.product_id = products.id
